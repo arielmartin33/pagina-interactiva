@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import messagebox
+
+from tkinter import messagebox, PhotoImage, Label
 from reloj import *
 from listaDeTareas import *
 
@@ -8,8 +9,13 @@ def version():
     messagebox.showinfo("Integrantes", message="Aldo Saravia, Celeste Vilar, Diego Torres, Fabrizio")
 
 ventana = tk.Tk()
-ventana.title('Menú desplegable')
-ventana.geometry('400x200')
+ventana.title('Pagina Interactiva')
+ventana.geometry('650x500')
+ventana.resizable(0,0)
+
+imagen = PhotoImage(file="fondo.png")
+background = Label(image=imagen)
+background.place(x=0, y=0, relheight=1, relwidth=1)
 
 barra_menu = tk.Menu(ventana)
 ventana.config(menu=barra_menu)
